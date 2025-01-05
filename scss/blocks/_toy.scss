@@ -1,0 +1,191 @@
+@use '../util' as u;
+
+.toy {
+    position: relative;
+    background-color: var(--bg-penee);
+    padding: 2rem 1rem;
+
+    @include u.breakpoint(medium) {
+        padding: 10rem 7rem;
+    }
+
+    &__container {
+        display: grid;
+        position: relative;
+        grid-template-rows: auto auto;
+        grid-template-columns: 49% auto;
+        grid-template-areas:
+            "title title"
+            "image text";
+        align-items: start;
+        margin-block-end: 1.5rem;
+        width: 100%;
+        min-height: 9rem;
+
+        @include u.breakpoint(medium) {
+            column-gap: 3rem;
+            margin-block-end: 4rem;
+            min-height: 48rem;
+            grid-template-rows: 45% auto;
+            grid-template-columns: 49% auto;
+            grid-template-areas:
+                "image title"
+                "image text";
+        }
+    }
+
+    &__container>* {
+        z-index: 4;
+    }
+
+    &__audio-image {
+        width: 5rem;
+        top: 9rem;
+        left: calc(50% + 2.5rem);
+        rotate: -2deg;
+
+        @include u.breakpoint(medium) {
+            width: 16rem;
+            top: 38rem;
+            left: calc(50% + 8rem);
+        }
+
+    }
+
+    &__image {
+        grid-area: image;
+        max-width: 100%;
+        padding-inline-end: 1.25rem;
+
+        @include u.breakpoint(medium) {
+            max-width: 36rem;
+            align-self: start;
+            width: 100%;
+            padding-inline-end: 0;
+        }
+    }
+
+    &__img-arrow {
+        display: none;
+
+        @include u.breakpoint(medium) {
+            display: block;
+            position: absolute;
+            top: 15rem;
+            left: calc(50% + 5rem);
+        }
+    }
+
+    &__img-divider {
+        display: none;
+
+        @include u.breakpoint(medium) {
+            display: block;
+            position: absolute;
+            top: 28rem;
+            width: 100%;
+            z-index: 2;
+        }
+    }
+
+    &__heading {
+        grid-area: title;
+        margin-inline-start: 35%;
+
+        @include u.breakpoint(medium) {
+            max-width: 36rem;
+            margin-inline-start: 0;
+            font-size: 6rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+    }
+
+    &__text {
+        grid-area: text;
+        max-width: 8rem;
+
+        @include u.breakpoint(medium) {
+            max-width: 100%;
+            margin-block-start: 3rem;
+            width: 70%;
+        }
+    }
+
+    &__gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-block-end: 2.75rem;
+
+        @include u.breakpoint(medium) {
+            gap: 2.5rem;
+            margin-block-end: 4rem;
+        }
+    }
+
+    &__image-small {
+        max-width: 5rem;
+
+        @include u.breakpoint(medium) {
+            max-width: 12.5rem;
+        }
+
+        &:last-of-type {
+            border-radius: 20px;
+        }
+    }
+
+    &__container-secondary {
+        display: flex;
+        flex-direction: row;
+        column-gap: 1rem;
+        width: 100%;
+
+        @include u.breakpoint(medium) {
+            column-gap: 5rem;
+        }
+    }
+
+    &__image-paper {
+        width: 40%;
+        padding-block-start: 4rem;
+
+        @include u.breakpoint(medium) {
+            max-width: 37.5rem;
+            padding-block-start: 0;
+            object-fit: scale-down;
+        }
+    }
+
+    &__container-description-wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3.5rem;
+        position: relative;
+
+        @include u.breakpoint(medium) {
+            row-gap: 7rem;
+        }
+    }
+
+    &__text-scribble {
+        max-width: 8rem;
+
+        @include u.breakpoint(medium) {
+            max-width: 28rem;
+        }
+    }
+
+    &__img-scribble {
+        &--penee {
+            max-width: 4.5rem;
+            transform: translate(-0.2rem);
+
+            @include u.breakpoint(large) {
+                max-width: 18rem;
+                transform: translate(-3rem);
+            }
+        }
+    }
+}

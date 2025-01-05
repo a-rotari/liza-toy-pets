@@ -1,0 +1,173 @@
+:root {
+    /* Colors */
+    --bg-penee: #72FF06;
+    --bg-lucky: #21BACB;
+    --bg-neutral: #faf3e0;
+    --text-primary: #9C0981;
+    --text-penee: #9C0981;
+    --text-lucky: #2ecc71;
+
+    /* Fonts */
+    --heading-font: 'Inter', sans-serif;
+    --body-font: 'Inter', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+    background-color: var(--bg-neutral);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+}
+
+menu:not(article menu),
+ol:not(article ol),
+ul:not(article ul) {
+    list-style: none;
+}
+
+menu,
+ol,
+ul {
+    padding-left: 0;
+}
+
+article ol,
+article ul {
+    list-style-position: inside;
+}
+
+button {
+    background: none;
+    background-color: var(--button-main);
+    color: var(--text-secondary);
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+    background-color: var(--bg-neutral);
+    color: var(--text-primary);
+    margin-inline: auto;
+    max-width: min(100%, 1440px);
+    box-shadow: 0 4px 100px rgba(0, 0, 0, 0.25);
+}
+
+textarea {
+    max-width: 100%;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.toy-main {
+    position: relative;
+    background-color: var(--bg-penee);
+    padding: 10rem 7rem;
+}
+
+.toy-container {
+    display: grid;
+    position: relative;
+    grid-template-rows: 45% auto;
+    grid-template-columns: 49% auto;
+    grid-template-areas:
+        "image title"
+        "image text";
+    column-gap: 3rem;
+    align-items: start;
+    margin-block-end: 4rem;
+    width: 100%;
+    min-height: 48rem;
+}
+
+.toy-container>* {
+    z-index: 4;
+}
+
+.toy-image {
+    grid-area: image;
+    max-width: 36rem;
+    align-self: start;
+    width: 100%;
+}
+
+.toy-container h1 {
+    grid-area: title;
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.toy-container p {
+    grid-area: text;
+    margin-block-start: 3rem;
+    width: 70%;
+}
+
+.img-arrow {
+    position: absolute;
+    top: 15rem;
+    left: calc(50% + 5rem);
+}
+
+.img-divider {
+    position: absolute;
+    top: 28rem;
+    width: 100%;
+    z-index: 2;
+}
+
+.toy-gallery-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin-block-end: 4rem;
+}
+
+.toy-image-small {
+    width: 12.5rem;
+}
+
+.toy-image-small:last-of-type {
+    border-radius: 20px;
+}
+
+.toy-image-paper {
+    max-width: 37.5rem;
+}
+
+.toy-container-secondary {
+    display: flex;
+    flex-direction: row;
+    column-gap: 5rem;
+}
+
+.toy-container-description-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 7rem;
+    position: relative;
+}
+
+.img-penee-heart {
+    max-width: 18rem;
+    transform: translate(-3rem);
+}

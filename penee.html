@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="freeCodeCamp Accessibility Quiz practice project" />
+  <title>Liza's Toy Pets - Penee</title>
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+  <img class="toy__img-divider" src="img/divider-line-1.svg" alt="Divider line">
+  <section class="toy">
+    <div class="toy__container">
+      <img class="toy__image" src="img/penee-1.webp" alt="A close-up of a toy pig" width="584">
+      <h1 class="toy__heading">Penee is here</h1>
+      <img class="toy__img-arrow" src="img/arrow-left-1.svg" alt="An arrow pointing to the image on the left">
+      <p class="toy__text">hre neam is penee she was chrapt in the boshes alon. I thinck somwun chrapt hre in the
+        boshes!</p>
+      <img id="audioImage" class="toy__audio-image" src="img/liza-speak.webp" alt="Play Audio">
+      <audio controls id="audioPlayer">
+        <source src="penee.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div class="toy__gallery-container">
+      <img src="img/penee-2.webp" alt="Gallery image of a toy pig" class="toy__image-small">
+      <img src="img/penee-3.webp" alt="Gallery image of a toy pig" class="toy__image-small">
+      <img src="img/penee-4.webp" alt="Gallery image of a toy pig" class="toy__image-small">
+    </div>
+    <div class="toy__container-secondary">
+      <img src="img/penee-paper.webp" alt="Sheet of paper with a story of Penee the pig" class="toy__image-paper">
+      <div class="toy__container-description-wrapper">
+        <p class="toy__text-scribble">
+          she hrt hre hed!
+          &#129325;&#129325;&#128561;&#128561;&#128579;&#128579;&#128550;&#128550;&#128575;&#128575;&#128552;&#128552;&#129398;&#129398;&#129397;&#129397;&#129397;&#129327;&#129327;
+        </p>
+        <img src="img/penee-heart.svg" alt="Antropomorphized heart drawn with a pencil looking up at the pig"
+          class="toy__img-scribble--penee">
+      </div>
+    </div>
+  </section>
+  <script>
+    // JavaScript to handle image swapping and audio playback
+    const audioPlayer = document.getElementById('audioPlayer');
+    const audioImage = document.getElementById('audioImage');
+
+    audioImage.addEventListener('click', () => {
+      if (audioPlayer.paused) {
+        audioPlayer.play(); // Play audio
+        audioImage.src = 'img/liza-pause.webp'; // Change to pause image
+      } else {
+        audioPlayer.pause(); // Pause audio
+        audioImage.src = 'img/liza-speak.webp'; // Change back to play image
+      }
+    });
+
+    // Revert to play image when audio ends
+    audioPlayer.addEventListener('ended', () => {
+      audioImage.src = 'img/liza-speak.webp';
+    });
+  </script>
+</body>
+
+</html>

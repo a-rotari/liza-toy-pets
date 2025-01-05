@@ -1,0 +1,103 @@
+@use '../util' as u;
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    margin-top: 0;
+    font-family: var(--heading-font);
+}
+
+h1 {
+    font-size: 1.5rem;
+
+    @include u.breakpoint(medium) {
+        font-size: 6.25rem;
+    }
+}
+
+p {
+    margin-top: 0;
+    font-size: 0.75rem;
+
+    @include u.breakpoint(medium) {
+        font-size: 2rem;
+    }
+}
+
+a,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+a {
+    color: inherit;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+menu:not(article menu),
+ol:not(article ol),
+ul:not(article ul) {
+    list-style: none;
+}
+
+menu,
+ol,
+ul {
+    padding-left: 0;
+}
+
+article ol,
+article ul {
+    list-style-position: inside;
+}
+
+label,
+button,
+select,
+summary,
+[type=radio],
+[type=submit],
+[type=checkbox] {
+    cursor: pointer;
+}
+
+dialog {
+    background-color: inherit;
+    border: none;
+    padding: 0;
+}
+
+dialog:focus-visible {
+    outline: none;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.9);
+}

@@ -1,0 +1,19 @@
+{
+  "name": "liza-pets",
+  "version": "1.0.0",
+  "description": "Compile SCSS to minified CSS with source maps for a static website project",
+  "main": "index.js",
+  "scripts": {
+    "build:sass": "sass --no-source-map scss:./",
+    "watch:sass": "sass --watch scss:./ --style=compressed --source-map",
+    "postbuild": "postcss styles.css --use autoprefixer cssnano --map --replace"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "cssnano": "^5.0.17",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.49.8"
+  },
+  "author": "Andrei Rotari",
+  "license": "ISC"
+}
