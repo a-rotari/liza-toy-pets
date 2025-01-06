@@ -1,13 +1,8 @@
 @use '../util' as u;
 
 .toy {
+    min-height: 100vh;
     position: relative;
-    background-color: var(--bg-penee);
-    padding: 2rem 1rem;
-
-    @include u.breakpoint(medium) {
-        padding: 10rem 7rem;
-    }
 
     &__container {
         display: grid;
@@ -39,17 +34,14 @@
     }
 
     &__audio-image {
-        width: 5rem;
         top: 9rem;
         left: calc(50% + 2.5rem);
         rotate: -2deg;
 
         @include u.breakpoint(medium) {
-            width: 16rem;
             top: 38rem;
             left: calc(50% + 8rem);
         }
-
     }
 
     &__image {
@@ -74,30 +66,45 @@
             top: 15rem;
             left: calc(50% + 5rem);
         }
+
+        &--lucky {
+            top: 5rem;
+            left: calc(50% - 0.5rem);
+        }
     }
 
     &__img-divider {
-        display: none;
+        display: block;
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        top: 12rem;
 
         @include u.breakpoint(medium) {
-            display: block;
-            position: absolute;
-            top: 28rem;
-            width: 100%;
-            z-index: 2;
+            top: 31rem;
         }
     }
 
     &__heading {
         grid-area: title;
         margin-inline-start: 35%;
+        margin-block-end: 1rem;
 
         @include u.breakpoint(medium) {
             max-width: 36rem;
             margin-inline-start: 0;
-            font-size: 6rem;
-            font-weight: 700;
-            line-height: 1.2;
+        }
+
+        &--lucky {
+            @include u.breakpoint(medium) {
+                font-size: 4rem;
+                padding-inline-start: 9rem;
+            }
+
+            @include u.breakpoint(large) {
+                font-size: 6rem;
+                padding-inline-start: 10rem;
+            }
         }
     }
 

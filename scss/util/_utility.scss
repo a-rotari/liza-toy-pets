@@ -1,0 +1,56 @@
+@use "./breakpoints" as u;
+
+.external-padding {
+    padding: 2rem 1rem;
+
+    @include u.breakpoint(medium) {
+        padding: 10rem 7rem;
+    }
+}
+
+.heading {
+    @include u.breakpoint(medium) {
+        font-size: 6rem;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+}
+
+.justify-left {
+    justify-self: left;
+}
+
+.justify-right {
+    justify-self: right;
+}
+
+.audio-image {
+    width: 5rem;
+
+    @include u.breakpoint(medium) {
+        width: 16rem;
+    }
+}
+
+.navigate-back-link {
+    display: block;
+    position: sticky;
+    top: 1rem;
+    left: 2rem;
+    width: 3rem;
+    z-index: 5;
+
+    @include u.breakpoint(medium) {
+        width: 7rem;
+        top: 0;
+        left: 7rem;
+    }
+}
+
+.penee-bg-color {
+    background-color: var(--bg-penee);
+}
+
+.lucky-bg-color {
+    background-color: var(--bg-lucky);
+}

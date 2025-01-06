@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="freeCodeCamp Accessibility Quiz practice project" />
+  <title>Liza's Rescued (Toy) Animals - Lucky</title>
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+  <section class="animal-gallery external-padding">
+    <h1 class="animal-gallery__heading heading">Click on my rescued animals</h1>
+    <div class="animal-gallery__container">
+      <div class="animal-gallery__link-wrapper">
+        <a href="penee.html">
+          <img class="animal-gallery__image" src="img/penee-thumb.webp" alt="A close-up of a toy pig" width="130">
+        </a>
+        <a href="penee.html">
+          <h2 class="animal-gallery__animal-name justify-left">Penee</h2>
+        </a>
+      </div>
+      <div class="animal-gallery__link-wrapper">
+        <a href="lucky.html">
+          <h2 class="animal-gallery__animal-name justify-right">Lucky</h2>
+        </a>
+        <a href="lucky.html">
+          <img class="animal-gallery__image" src="img/lucky-thumb.webp" alt="A close-up of a toy bee" width="130">
+        </a>
+      </div>
+      <p class="animal-gallery__welcome-text">
+        hi i am liza this is my pet klinik website on this website you can click on my animals and you can hear my
+        voice!!!!!!!!!!!!!!
+      </p>
+      <img id="audioImage" class="audio-image animal-gallery__audio-image" src="img/liza-speak.webp" alt="Play Audio">
+      <audio controls id="audioPlayer">
+        <source src="welcome.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </section>
+  <script>
+    const audioPlayer = document.getElementById('audioPlayer');
+    const audioImage = document.getElementById('audioImage');
+
+    audioImage.addEventListener('click', () => {
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+        audioImage.src = 'img/liza-pause.webp';
+      } else {
+        audioPlayer.pause();
+        audioImage.src = 'img/liza-speak.webp';
+      }
+    });
+
+    audioPlayer.addEventListener('ended', () => {
+      audioImage.src = 'img/liza-speak.webp';
+    });
+  </script>
+</body>
+
+</html>

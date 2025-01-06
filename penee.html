@@ -5,20 +5,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="freeCodeCamp Accessibility Quiz practice project" />
-  <title>Liza's Toy Pets - Penee</title>
+  <title>Liza's Rescued (Toy) Animals - Penee</title>
   <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 
 <body>
   <img class="toy__img-divider" src="img/divider-line-1.svg" alt="Divider line">
-  <section class="toy">
+  <section class="toy penee-bg-color external-padding">
+    <a href="index.html" class="navigate-back-link">
+      <img src="img/back-arrow.svg" alt="Go back to main gallery button">
+    </a>
     <div class="toy__container">
       <img class="toy__image" src="img/penee-1.webp" alt="A close-up of a toy pig" width="584">
-      <h1 class="toy__heading">Penee is here</h1>
+      <h1 class="toy__heading heading">Penee is here</h1>
       <img class="toy__img-arrow" src="img/arrow-left-1.svg" alt="An arrow pointing to the image on the left">
       <p class="toy__text">hre neam is penee she was chrapt in the boshes alon. I thinck somwun chrapt hre in the
         boshes!</p>
-      <img id="audioImage" class="toy__audio-image" src="img/liza-speak.webp" alt="Play Audio">
+      <img id="audioImage" class="audio-image toy__audio-image" src="img/liza-speak.webp" alt="Play Audio">
       <audio controls id="audioPlayer">
         <source src="penee.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -42,7 +45,6 @@
     </div>
   </section>
   <script>
-    // JavaScript to handle image swapping and audio playback
     const audioPlayer = document.getElementById('audioPlayer');
     const audioImage = document.getElementById('audioImage');
 
