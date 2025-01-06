@@ -26,13 +26,13 @@ jobs:
       run: ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
 
     - name: Clean target directory on EC2
-      run: ssh -i ~/.ssh/id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} 'rm -rf /var/www/liza-pets/*'
+      run: ssh -i ~/.ssh/id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} 'sudo rm -rf /var/www/liza-pets/*'
 
     - name: Create tar archive
-      run: tar -czf deploy.tar.gz *.html *.css *.js *.mp3 img
+      run: tar -czf deploy.tar.gz *.html *.css *.mp3 img
 
     - name: Copy archive to EC2
-      run: scp -i ~/.ssh/id_rsa deploy.tar.gz ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/liza-pets/
+      run: scp -i ~/.ssh/id_rsa deploy.tar.gz ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/home/ubuntu
 
     - name: Extract the archive on EC2
-      run: ssh -i ~/.ssh/id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} 'tar -xzf /var/www/liza-pets/deploy.tar.gz -C /var/www/liza-pets && rm /var/www/liza-pets/deploy.tar.gz'
+      run: ssh -i ~/.ssh/id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} 'sudo tar -xzf /home/ubuntu/deploy.tar.gz -C /var/www/liza-pets'
