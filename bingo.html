@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="freeCodeCamp Accessibility Quiz practice project" />
+  <title>Liza's Toy Pets - Bingo</title>
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body class="bingo-colors">
+  <img class="toy__img-divider" src="img/divider-line-3.svg" alt="Divider line">
+  <section class="toy bingo-bg-color external-padding">
+    <a href="index.html" class="navigate-back-link">
+      <img src="img/back-arrow.svg" alt="Go back to main gallery button">
+    </a>
+    <div class="toy__container">
+      <img class="toy__image" src="img/bingo-1.webp" alt="A close-up of a toy puppy" width="584">
+      <h1 class="toy__heading heading toy__heading--lucky">Bingo is here</h1>
+      <img class="toy__img-arrow toy__img-arrow--lucky" src="img/arrow-left-3.svg"
+        alt="An arrow pointing to the image on the left">
+      <p class="toy__text">We do not know where he was rescued. But we know what his name is Bingo.</p>
+      <img id="audioImage" class="audio-image toy__audio-image" src="img/liza-speak.webp" alt="Play Audio">
+      <audio controls id="audioPlayer">
+        <source src="bingo.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div class="toy__gallery-container">
+      <img src="img/bingo-1.webp" alt="Gallery image of a toy bee" class="toy__image-small">
+      <img src="img/bingo-1.webp" alt="Gallery image of a toy bee" class="toy__image-small">
+      <img src="img/bingo-1.webp" alt="Gallery image of a toy bee" class="toy__image-small">
+    </div>
+    <div class="toy__container-secondary">
+      <img src="img/bingo-paper.webp" alt="Sheet of paper with a story of Lucky the bee" class="toy__image-paper">
+      <div class="toy__container-description-wrapper">
+        <p class="toy__text-scribble">
+          he hrt his leg!🐕🐕🐶🐶🏥🏥🏥🏥😿😿😿😿😿😥😥😥😥😥😥😫😫
+        </p>
+        <img src="img/bingo-heart.svg" alt="Antropomorphized sad heart with lightnings flowing like tears from its eyes"
+          class="toy__img-scribble--penee">
+      </div>
+    </div>
+  </section>
+  <script>
+    const audioPlayer = document.getElementById('audioPlayer');
+    const audioImage = document.getElementById('audioImage');
+
+    audioImage.addEventListener('click', () => {
+      if (audioPlayer.paused) {
+        audioPlayer.play(); // Play audio
+        audioImage.src = 'img/liza-pause.webp'; // Change to pause image
+      } else {
+        audioPlayer.pause(); // Pause audio
+        audioImage.src = 'img/liza-speak.webp'; // Change back to play image
+      }
+    });
+
+    // Revert to play image when audio ends
+    audioPlayer.addEventListener('ended', () => {
+      audioImage.src = 'img/liza-speak.webp';
+    });
+  </script>
+</body>
+
+</html>
